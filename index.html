@@ -5,64 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cryptic | Secure Encryption</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="background-shapes" id="shapes-container"></div>
-    
-    <div class="container">
-        <header>
-            <h1>COLSAR ENCRYPTION</h1>
-            <p class="subtitle">Secure text encryption & decryption</p>
-        </header>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet"></head>
+    <body>
+        <div class="background-shapes" id="shapes-container"></div>
         
-        <div class="input-container">
-            <input type="text" class="input-field" id="inputText" placeholder="Enter text to encrypt">
-        </div>
-        
-        <div class="button-container">
-            <button class="btn encrypt-btn" id="encryptButton">Encrypt</button>
-            <button class="btn decrypt-btn" id="decryptButton">Decrypt</button>
-        </div>
-        
-        <div class="result-container" id="result-container">
-            <p class="result-title" id="outputText">Result:</p>
-            <p id="result"></p>
-        </div>
-        
-        <footer>
-            <p>Your data is processed locally and never sent to any server</p>
-        </footer>
-    </div>
-
-    <script src="app.js"></script>
-    <script>
-        // Create background squares
-        function createSquares() {
-            const container = document.getElementById('shapes-container');
-            const squareCount = 20;
+        <div class="container">
+            <header>
+                <h1>COLSAR ENCRYPTION</h1>
+                <p class="subtitle">Secure text encryption & decryption</p>
+            </header>
             
-            for (let i = 0; i < squareCount; i++) {
-                const square = document.createElement('div');
-                square.classList.add('square');
+            <div class="input-container">
+                <input type="text" class="input-field" id="inputText" placeholder="Enter text to encrypt">
+            </div>
+            
+            <div class="button-container">
+                <button class="btn encrypt-btn" id="encryptButton">Encrypt</button>
+                <button class="btn decrypt-btn" id="decryptButton">Decrypt</button>
+            </div>
+            
+            <div class="result-container" id="result-container">
+                <p class="result-title" id="outputText">Result:</p>
+                <p id="result"></p>
+            </div>
+            
+            <footer>
+                <p>Your data is processed locally and never sent to any server</p>
+            </footer>
+        </div>
+        
+        <script src="app.js"></script>
+        <script>
+            // Create background squares
+            function createSquares() {
+                const container = document.getElementById('shapes-container');
+                const squareCount = 20;
                 
-                // Random properties
-                const size = Math.random() * 100 + 20;
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                const delay = Math.random() * 15;
-                const duration = Math.random() * 30 + 15;
-                
-                square.style.width = `${size}px`;
-                square.style.height = `${size}px`;
-                square.style.left = `${posX}vw`;
-                square.style.top = `${posY}vh`;
-                square.style.animationDelay = `${delay}s`;
-                square.style.animationDuration = `${duration}s`;
-                
-                container.appendChild(square);
+                for (let i = 0; i < squareCount; i++) {
+                    const square = document.createElement('div');
+                    square.classList.add('square');
+                    
+                    // Random properties
+                    const size = Math.random() * 100 + 20;
+                    const posX = Math.random() * 100;
+                    const posY = Math.random() * 100;
+                    const delay = Math.random() * 15;
+                    const duration = Math.random() * 30 + 15;
+                    
+                    square.style.width = `${size}px`;
+                    square.style.height = `${size}px`;
+                    square.style.left = `${posX}vw`;
+                    square.style.top = `${posY}vh`;
+                    square.style.animationDelay = `${delay}s`;
+                    square.style.animationDuration = `${duration}s`;
+                    
+                    container.appendChild(square);
+                }
             }
-        }
-    </script>
-</body>
-</html>
+        </script>
+    </body>
+    </html>

@@ -8,24 +8,23 @@ const resultContainer = document.getElementById('result-container');
 encryptButton.addEventListener('click', () => {
     const text = inputText.value || '';
     const wordArray = text.split(' ');
-
+    
     if (!text) {
         outputText.textContent = 'Please enter text to encrypt/decrypt.';
         return;
     }
-
+    
     console.log(`Input Text:`,wordArray);
-
+    
     const shiftedWordArr = wordArray.map((word,index) => {
         console.log(`Word:`,word, colatzCount(index + wordArray.length));
         return colsarEncrypt(word,colatzCount(index + wordArray.length));
     });
-
+    
     console.log(`Shifted Word Array:`,shiftedWordArr);
-
+    
     const encrypted = shiftedWordArr.join(' ');
     outputText.textContent = `Encrypted Text: ${encrypted}`;
-    // resultElement.textContent = encryptedText;
     resultContainer.classList.add('show');
 });
 
@@ -46,9 +45,9 @@ function colsarEncrypt(text, shift = 3) {
 
 function colatzCount(seed){
     let count = 0;
-
+    
     if(seed < 1) return 0;
-
+    
     while(seed != 1){
         if(seed % 2 == 0){
             seed = seed / 2;
@@ -63,23 +62,25 @@ function colatzCount(seed){
 decryptButton.addEventListener('click', () => {
     const text = inputText.value || '';
     const wordArray = text.split(' ');
-
+    
     if (!text) {
         outputText.textContent = 'Please enter text to encrypt/decrypt.';
         return;
     }
-
+    
     console.log(`Input Text:`,wordArray);
-
+    
     const shiftedWordArr = wordArray.map((word,index) => {
         console.log(`Word:`,word, colatzCount(index + wordArray.length));
         return colsarDecrypt(word,colatzCount(index + wordArray.length));
     });
-
+    
     console.log(`Shifted Word Array:`,shiftedWordArr);
-
+    
     const encrypted = shiftedWordArr.join(' ');
     outputText.textContent = `Encrypted Text: ${encrypted}`;
+    resultContainer.classList.add('show');
+    
 });
 
 function colsarDecrypt(text, shift = 3) {
