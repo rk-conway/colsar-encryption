@@ -5,6 +5,9 @@ const outputText = document.getElementById('outputText');
 
 encryptButton.addEventListener('click', () => {
     const text = inputText.value;
+    const wordArray = text.split(' ');
+
+    console.log(`Input Text:`,wordArray);
     const encrypted = colsarEncrypt(text);
     outputText.textContent = `Encrypted Text: ${encrypted}`;
 });
