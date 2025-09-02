@@ -10,13 +10,13 @@ encryptButton.addEventListener('click', () => {
     console.log(`Input Text:`,wordArray);
 
     const shiftedWordArr = wordArray.map((word,index) => {
-        console.log(`Word:`,word);
-        return colsarEncrypt(word,index);
+        console.log(`Word:`,word, colatzCount(index + wordArray.length));
+        return colsarEncrypt(word,colatzCount(index + wordArray.length));
     });
 
     console.log(`Shifted Word Array:`,shiftedWordArr);
 
-    const encrypted = colsarEncrypt(text);
+    const encrypted = shiftedWordArr.join(' ');
     outputText.textContent = `Encrypted Text: ${encrypted}`;
 });
 
@@ -30,4 +30,21 @@ function colsarEncrypt(text, shift = 3) {
         }
         return char; // Non-alphabetic characters remain unchanged
     }).join('');
+}
+
+
+function colatzCount(seed){
+    let count = 0;
+
+    if(seed < 1) return 0;
+
+    while(seed != 1){
+        if(seed % 2 == 0){
+            seed = seed / 2;
+        } else {
+            seed = 3 * seed + 1;
+        }
+        count++;
+    }
+    return count;
 }
