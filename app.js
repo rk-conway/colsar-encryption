@@ -24,7 +24,7 @@ encryptButton.addEventListener('click', () => {
     console.log(`Shifted Word Array:`,shiftedWordArr);
     
     const encrypted = shiftedWordArr.join(' ');
-    outputText.textContent = `Encrypted Text: ${encrypted}`;
+    outputText.textContent = `${encrypted}`;
     resultContainer.classList.add('show');
 });
 
@@ -78,7 +78,7 @@ decryptButton.addEventListener('click', () => {
     console.log(`Shifted Word Array:`,shiftedWordArr);
     
     const encrypted = shiftedWordArr.join(' ');
-    outputText.textContent = `Encrypted Text: ${encrypted}`;
+    outputText.textContent = `${encrypted}`;
     resultContainer.classList.add('show');
     
 });
