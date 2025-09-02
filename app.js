@@ -2,6 +2,7 @@ const inputText = document.getElementById('inputText');
 const encryptButton = document.getElementById('encryptButton');
 const decryptButton = document.getElementById('decryptButton');
 const outputText = document.getElementById('outputText');
+const resultContainer = document.getElementById('result-container');
 
 
 encryptButton.addEventListener('click', () => {
@@ -24,6 +25,8 @@ encryptButton.addEventListener('click', () => {
 
     const encrypted = shiftedWordArr.join(' ');
     outputText.textContent = `Encrypted Text: ${encrypted}`;
+    // resultElement.textContent = encryptedText;
+    resultContainer.classList.add('show');
 });
 
 
